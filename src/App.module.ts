@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { MessageQueue, MessageProcessor } from './common/Message.processor';
+import QueueConfig, { MessageQueue } from './common/Queue.config';
+import { MessageProcessor } from './common/Message.processor';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    QueueConfig,
     MessageQueue,
   ],
   providers: [MessageProcessor],
