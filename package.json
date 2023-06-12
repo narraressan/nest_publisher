@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "postinstall": "husky install",
+    "postinstall": "husky install && chmod +x .husky/*",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -27,9 +27,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "husky": "^8.0.3",
-    "ioredis": "^5.3.2",
     "lint-staged": "^13.2.2",
-    "lodash": "^4.17.21",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
@@ -78,10 +76,5 @@
       "yarn format",
       "yarn lint"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

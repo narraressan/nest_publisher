@@ -1,11 +1,7 @@
-import { BullModule, Process, Processor } from '@nestjs/bull';
+import { Process, Processor } from '@nestjs/bull';
 import { Job } from 'bull';
 import { QUEUE_NAME, cast } from './utils';
 import { ExamplePublisherInput } from './Message.dto';
-
-export const MessageQueue = BullModule.registerQueue({
-  name: QUEUE_NAME,
-});
 
 @Processor(QUEUE_NAME)
 export class MessageProcessor {
